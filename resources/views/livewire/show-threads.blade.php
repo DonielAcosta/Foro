@@ -4,14 +4,16 @@
             Preguntar
         </a>
         <ul class="mb-2">
+            @foreach ($categories as $category )
+                <li>
+                    <a href="" class ="p-2 rounded-md flex bg-slate-800 items-center gap-2 text-white/60 hover:text-white font-semibold text-xs capitalize">
+                        <span class ="w-2 h-2 rounded-full" style="background-color: {{ $category->color }};"></span>
+                        {{ $category->name }}
+                    </a>
+                </li>
+            @endforeach
             <li>
-                <a href="" class ="p-2 rounded-md flex bg-slate-800 items-center gap-2 text-white/60 hover:text-white font-semibold text-xs capitalize">
-                    <span class ="w-2 h-2 rounded-full" style="background-color: #00aced;"></span>
-                    Ejemplo
-                </a>
-            </li>
-            <li>
-                <a href="" class ="p-2 rounded-md flex bg-slate-800 items-center gap-2 text-white/60 hover:text-white font-semibold text-xs capitalize">
+                <a href="" class ="p-2 rounded-md flex bg-slate-800 items-center gap-2 text-white/60 hover:text-white font-semibold text-xs ">
                     <span class ="w-2 h-2 rounded-full" style="background-color: #000;"></span>
                     Todos los resultados
                 </a>

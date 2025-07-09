@@ -3,11 +3,15 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Category;
 
 class ShowThreads extends Component
 {
-    public function render()
-    {
-        return view('livewire.show-threads')->layout('layouts.app');
+    public function render(){
+
+        $categories = Category::get();
+        return view('livewire.show-threads',[
+            'categories' => $categories
+        ])->layout('layouts.app');
     }
 }
