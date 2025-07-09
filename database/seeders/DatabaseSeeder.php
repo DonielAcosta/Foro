@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory()->create(['email'=>'donielacosta1995@gmail.com','password'=>bcrypt("123456789")]);
         \App\Models\User::factory(10)->create();
-        \App\Models\Category::factory(10)->create();
+        \App\Models\Category::factory(10)->hasThreads(20)->create();
 
 
 
