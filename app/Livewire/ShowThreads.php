@@ -11,7 +11,7 @@ class ShowThreads extends Component{
     public $search  ='';
     public $category ='';
 
-    public function filterBycategoty($category){
+    public function filterByCategory($category){
         $this->category =$category;
     }
     public function render(){
