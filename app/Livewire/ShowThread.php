@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Thread;
-use Livewire\Attributes\Validate;
 class ShowThread extends Component
 {
     public Thread $thread;
@@ -20,7 +19,7 @@ class ShowThread extends Component
             'body' => $this->body,
         ]);
         //refresh
-        $this->body =" ";
+        $this->body ='';
     }
     public function render()
     {

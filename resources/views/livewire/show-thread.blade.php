@@ -48,8 +48,8 @@
         class="bg-slate-800 border-0 rounded-md w-full p-3 text-white/90 text-sm"
         wire:model.defer="body"
     >
-    <button type="submit" class="hidden"></button> {{-- Oculto, para que el enter funcione --}}
-</form>
+     <button type="submit" class="hidden"></button> {{-- Oculto, para que el enter funcione --}}
+    </form>
 
 </div>
 
