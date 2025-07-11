@@ -3,7 +3,6 @@
         <a href="{{ route('threads.create') }}" class="block w-full py-4 mb-10 bg-gradient-to-r from-blue-600 to-blue-700 hover:to-blue-600 text-white/90 font-bold text-xs text-center rounded-md">
             Preguntar
         </a>
-
         <ul>
             @foreach($categories as $category)
             <li class="mb-2">
@@ -13,7 +12,6 @@
                 </a>
             </li>
             @endforeach
-
             <li>
                 <a href="#" wire:click.prevent="filterByCategory('')" class="p-2 rounded-md flex bg-slate-800 items-center gap-2 text-white/60 hover:text-white font-semibold text-xs">
                     <span class="w-2 h-2 rounded-full" style="background-color: #000;"></span>
@@ -31,7 +29,6 @@
                 wire:model="search"
             >
         </form>
-
         @foreach($threads as $thread)
         <div class="rounded-md bg-gradient-to-r from-slate-800 to-slate-900 hover:to-slate-800 mb-4">
             <div class="p-4 flex gap-4">
@@ -63,9 +60,10 @@
 
                             {{ $thread->replies_count }}
                             Respuesta{{ $thread->replies_count !== 1 ? 's' : '' }}
-
-                            |
-                            <a href="{{ route('threads.edit', $thread) }}" class="hover:text-white">Editar</a>
+                            @can('update', $thread)
+                                |
+                                <a href="{{ route('threads.edit', $thread) }}" class="hover:text-white">Editar</a>
+                            @endcan
                         </span>
                     </p>
                 </div>

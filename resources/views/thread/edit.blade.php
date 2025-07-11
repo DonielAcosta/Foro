@@ -3,16 +3,20 @@
         <div class="rounded-md bg-gradient-to-r from-slate-800 to-slate-900 mb-4">
             <div class="p-4">
                 <h2 class="mb-4 text-xl font-semibold text-white/90">
-                    Editar Pregunta
+                    Editar pregunta
                 </h2>
-                <form action="{{ route('thread.update',$thread) }}" method="POST">
-                    @csrf
+                
+                <form action="{{ route('threads.update', $thread) }}" method="POST">
+                    @csrf 
                     @method('PUT')
+
                     @include('thread.form')
+
                     <input 
-                        class="block w-full py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:to-blue-600 text-white/90 font-bold text-xs rounded-md" 
                         type="submit" 
-                        value="Editar Pregunta" >
+                        value="Editar pregunta" 
+                        class="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:to-blue-600 text-white/90 font-bold text-xs rounded-md"
+                    >
                 </form>
             </div>
         </div>
